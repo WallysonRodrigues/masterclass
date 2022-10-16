@@ -1,12 +1,11 @@
 void main(List<String> args) {
   void fibonnachi(List<int> list, int elements) {
+    const _initialValues = <int>[0,1];
+    
     switch (list.length) {
       case 0:
-        list.add(1);
-        break;
-      case 1:
-        list.add(2);
-        break;        
+        list.addAll(_initialValues);
+        break;      
       default:        
         int sum = list[list.length-2] + list[list.length-1];
         list.add(sum);
