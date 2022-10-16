@@ -1,5 +1,11 @@
 void main(List<String> args) {
-  void fibonnachi(List<BigInt> list, int elements) {
+  Future<void> fibonnachi(List<BigInt> list, int elements) async {
+    bool _mustWait = (list.length > 0 &&  list.length.remainder(1000) == 0);
+
+    if (_mustWait) {
+      await Future.delayed(Duration(microseconds: 1));  
+    }    
+
     var _initialValues = <BigInt>[BigInt.zero, BigInt.one];
     
     switch (list.length) {
@@ -21,8 +27,5 @@ void main(List<String> args) {
     }
   }
 
-
-
-  fibonnachi(<BigInt>[], 10);
-  /// Perguntar ao Jacob, porque esta dando erro no dart quando eu mando a lista ter 15000 elementos
+  fibonnachi(<BigInt>[], 10);  
 }
