@@ -1,13 +1,13 @@
 void main(List<String> args) {
-  void fibonnachi(List<int> list, int elements) {
-    const _initialValues = <int>[0,1];
+  void fibonnachi(List<BigInt> list, int elements) {
+    var _initialValues = <BigInt>[BigInt.zero, BigInt.one];
     
     switch (list.length) {
       case 0:
         list.addAll(_initialValues);
         break;      
       default:        
-        int sum = list[list.length-2] + list[list.length-1];
+        BigInt sum = list[list.length-2] + list[list.length-1];
         list.add(sum);
         break;
     }
@@ -21,5 +21,8 @@ void main(List<String> args) {
     }
   }
 
-  fibonnachi(<int>[], 15);
+
+
+  fibonnachi(<BigInt>[], 10);
+  /// Perguntar ao Jacob, porque esta dando erro no dart quando eu mando a lista ter 15000 elementos
 }
