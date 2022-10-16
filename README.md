@@ -1,2 +1,2 @@
 # masterclass
-repo to documento all the masterclass progress
+repo to document all the masterclass progress
